@@ -1,31 +1,12 @@
 % 
-(This file has been optimized to run on )
-( my sherline controlled by LinuxCNC )
 G17 G20 G40 G49 G54 G80 G90 G94 F10 
 G01 Z0.25 F5
-#<Clearance> = 0.25 (clearance) 
-#<DrillClearance> = 0.25 (Drill clearance) 
-#<PieceThickness> = -0.76 (piece thickness) 
-#<TabThickness> = -0.15 (tab thickness) 
-#<DepthOfCut> = [#<PieceThickness>-#<TabThickness>]
-#<DeltaCut> = [[#<PieceThickness>]/5]  (maximum Z cut) 
-#<HalfPieceThickness> = [#<PieceThickness>/2]
-#<HalfDeltaCut> = [[#<HalfPieceThickness>]/2]
-#<HoleDepth> = -0.375  (Pin hole depth)
-#<Section0> = 1
-#<Section1> = 1
-#<Section2> = 1
-#<Section3> = 1
-#<Section4> = 1
-#<Section5> = 1
-#<Section6> = 1
-#<Section7> = 1
-#<Section8> = 1
+
 
 M06 T4    (Tool Change)  
-G01 Z#<Clearance> F10 
+G01 Z0.25 F10 
 X0.000000 Y0.000000
-G81 Z#<HoleDepth> R#<DrillClearance> F5 	
+G81 Z-0.375 R0.25 F5   
 X0.208300 Y0.000000
 X0.416600 Y0.000000
 X0.624900 Y0.000000
@@ -372,7 +353,7 @@ X8.750000 Y0.550000
 X8.750000 Y0.275000
 X8.750000 Y0.000000
 
-X9.163800 Y1.375000 (winner hole)
+X9.163800 Y1.375000 (winner hoe)
 
 X-0.416600 Y0.550000
 X-0.416600 Y0.275000
@@ -400,8 +381,8 @@ X-0.416600 Y2.475000
 X-0.416600 Y2.750000
 X-0.833200 Y2.750000
 X-1.249800 Y2.750000
-N60 G80 G00 Z1 	
-N65 X0 Y0 	
-N70 M05 	
+N60 G80 G00 Z1   
+N65 X0 Y0   
+N70 M05   
 N75 M30
 
